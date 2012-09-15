@@ -1,7 +1,6 @@
 function plot_asymptotic_cr(theta_0,i00,i01,i11,m_inter,s_inter,datatype,cf_level)
-%% 画出不同置信度的联合置信区域
+%% 画出渐进方法不同置信度的联合置信区域
    
-
 nd = 200;
 x0 = theta_0(1);
 y0 = theta_0(2);
@@ -18,17 +17,20 @@ y = linspace(ymin,ymax,nd);
 for i = 1:nd
 	for j = 1:nd
 		z(i,j)=i00*(x(i) - x0)*(x(i) - x0) + 2*i01*(x(i)-x0)*(y(j)*sqrt(3)/pi-y0) + i11*(y(j)*sqrt(3)/pi-y0)*(y(j)*sqrt(3)/pi-y0);
+		z(i,j) = chi2cdf(z(i,j),2);
 	end
 end
 d_cf = chi2inv(cf_level,1);
-C = contour(x,y,z,d_cf);
-clabel(C,chi2cdf(d_cf,2));
+cf = chi2cdf(d_cf,2)
+
+[C,h] = contour(x,y,z,cf);
+clabel(C,cf);
+hold on;
+plot(x0,y0*pi/sqrt(3),'r^');
 text_title = sprintf('Asymptotic Analysis Using Linear %s Response',datatype);
 title(text_title);
 xlabel('\mu');
 ylabel('\sigma');
-grid on;
-%legend('10','10','10','10','10','10');
 
 end
 

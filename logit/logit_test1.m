@@ -33,4 +33,5 @@ p = [0.001,0.999];
 %% 画出联合置信域
 plot_asymptotic_cr(theta_e,i00,i01,i11,m_inter,s_inter,datatype,cf_level)
 
+%plot_likelihood_ratio_cr(@(theta)likelihood_function(x,n,r,nnum,theta,datatype),theta_e,datatype,cf_level)
 
