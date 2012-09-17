@@ -9,5 +9,5 @@ function [theta_e,fval]=maximum_likelihood_estimates( x,n,r,nnum,datatype)
 %   datatype: 感度数据类型 'norm':正态分布，'logistic'：Logistic分布
 
 [theta_e,fval] = fminsearch(@(theta)-log(likelihood_function(x,n,r,nnum,theta,datatype)),[mean(x),var(x)]);
-fval = - fval
+fval = - fval;
 end 

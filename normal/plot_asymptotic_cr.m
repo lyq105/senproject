@@ -1,41 +1,36 @@
-function plot_asymptotic_cr(x,n,r,nnum,datatype,cf_level,p)
-%  计算fisher信息矩阵 
-%   数据（x，n，r） theta=（theta1，theta2）
-%   输入：
-%             x :  刺激水平
-%             n :  相同刺激水平试验次数
-%             r :  相同刺激水平响应次数
-%          nnum :  刺激水平个数 
-%         theta :  待估计参数
-%      datatype :  感度数据类型 0:正态分布，1：Logistic分布
-%      cf_level :  置信度
-%             p :  发火点概率
-%   输出：
-%       m_inter :  参数m的置信区间
-%       s_inter :  参数s的置信区间
-%      lp_inter :  Lp的置信区间
-%
-[theta_e,fval]= maximum_likelihood_estimates( x,n,r,nnum,datatype);
+function plot_asymptotic_cr(theta_0,i00,i01,i11,m_inter,s_inter,datatype,cf_level)
+%% 画出渐进方法不同置信度的联合置信区域
    
-[i00,i01,i11] = fisher_information_matrix(x,n,r,nnum,theta_e,datatype);
+nd = 200;
+x0 = theta_0(1);
+y0 = theta_0(2);
+xmin = x0 - 1.2*(x0-min(min(m_inter)));
+xmax = x0 + 1.2*(max(max(m_inter))-x0);
 
-v = 0.5*atan(2*i01/(i00-i11));
+ymin = y0 - 1.2*(y0-min(min(s_inter)));
+ymax = y0 + 1.2*(max(max(s_inter))-y0);
 
-d_cf = chi2inv(cf_level,1);
-a = sqrt(2 * d_cf / (i00 + i11 + sqrt((i00 - i11)^2 + (2 * i01)^2)));
-b = sqrt(2 * d_cf / (i00 + i11 - sqrt((i00 - i11)^2 + (2 * i01)^2)));
+z = zeros(nd,nd);
+x = linspace(xmin,xmax,nd);
+y = linspace(ymin,ymax,nd);
 
-alpha = 0:1e-3:2*pi;
-
-for i=1:length(d_cf)
-	m = theta_e(1) + a(i)*cos(alpha)*cos(v) - b(i)*sin(alpha)*sin(v);
-	s = theta_e(2) + a(i)*cos(alpha)*sin(v) + b(i)*sin(alpha)*cos(v);
-	h = plot(m,s);
-	set(h,'color',[1 - i/6,i/6,1 - i/6]);
-	hold on;
+for i = 1:nd
+	for j = 1:nd
+		z(i,j)=i00*(x(i) - x0)*(x(i) - x0) + 2*i01*(x(i)-x0)*(y(j)-y0) + i11*(y(j)-y0)*(y(j)-y0);
+		z(i,j) = chi2cdf(z(i,j),2);
+	end
 end
+d_cf = chi2inv(cf_level,1);
+cf = chi2cdf(d_cf,2)
 
-text_title = sprintf('Asymptotic Analysis Using Linear %s Response',datatype);
+[C,h] = contour(x,y,z,cf);
+clabel(C,cf);
+hold on;
+plot(x0,y0,'r^');
+text_title = sprintf('Asymptotic Analysis Using Linear %s Response','Normal');
 title(text_title);
 xlabel('\mu');
 ylabel('\sigma');
+
+end
+
