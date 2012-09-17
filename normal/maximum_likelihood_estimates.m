@@ -1,12 +1,12 @@
 function [theta_e,fval]=maximum_likelihood_estimates( x,n,r,nnum,datatype)
-% è®¡ç®—æå¤§ä¼¼ç„¶ä¼°è®¡
-%   æ•°æ®ï¼ˆxï¼Œnï¼Œrï¼‰ theta=ï¼ˆtheta1ï¼Œtheta2ï¼‰
-%   x :  åˆºæ¿€æ°´å¹³
-%   n :  ç›¸åŒåˆºæ¿€æ°´å¹³è¯•éªŒæ¬¡æ•°
-%   r :  ç›¸åŒåˆºæ¿€æ°´å¹³å“åº”æ¬¡æ•°
-%   nnum : åˆºæ¿€æ°´å¹³ä¸ªæ•° 
-%   thetaï¼šå¾…ä¼°è®¡å‚æ•°
-%   datatype: æ„Ÿåº¦æ•°æ®ç±»å‹ 'norm':æ­£æ€åˆ†å¸ƒï¼Œ'logistic'ï¼šLogisticåˆ†å¸ƒ
+% ¼ÆËã¼«´óËÆÈ»¹À¼Æ
+%   Êı¾İ£¨x£¬n£¬r£© theta=£¨theta1£¬theta2£©
+%   x :  ´Ì¼¤Ë®Æ½
+%   n :  ÏàÍ¬´Ì¼¤Ë®Æ½ÊÔÑé´ÎÊı
+%   r :  ÏàÍ¬´Ì¼¤Ë®Æ½ÏìÓ¦´ÎÊı
+%   nnum : ´Ì¼¤Ë®Æ½¸öÊı 
+%   theta£º´ı¹À¼Æ²ÎÊı
+%   datatype: ¸Ğ¶ÈÊı¾İÀàĞÍ 'norm':ÕıÌ¬·Ö²¼£¬'logistic'£ºLogistic·Ö²¼
 
 [theta_e,fval] = fminsearch(@(theta)-log(likelihood_function(x,n,r,nnum,theta,datatype)),[mean(x),var(x)]);
 fval = - fval
