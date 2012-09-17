@@ -1,0 +1,21 @@
+/matlab/normal/
+|-asymptotic_confidence_intervals.m          计算渐进方法置信区间
+|-combinatorialnumber.m                          计算组合数
+|-cramer_rao_bounds.m                             计算Cramer Rao方差下界
+|-factorial.m                                              计算阶乘
+|-fisher_information_matrix.m                    计算Fisher信息矩阵
+|-likelihood_function.m                             似然函数
+|-maximum_likelihood_estimates.m           极大似然估计
+|-normal_test1.m                                       测试正态分布数据的算法
+`-plot_asymptotic_cr.m                              画出渐进方法联合置信区域
+
+/matlab/logit/
+|-asymptotic_confidence_intervals.m          计算渐进方法置信区间
+|-combinatorialnumber.m                          计算组合数
+|-cramer_rao_bounds.m                             计算Cramer Rao方差下界
+|-factorial.m                                              计算阶乘
+|-fisher_information_matrix.m                    计算Fisher信息矩阵
+|-likelihood_function.m                             似然函数
+|-maximum_likelihood_estimates.m           极大似然估计
+|-normal_test1.m                                       测试logit分布数据的算法
+`-plot_asymptotic_cr.m                              画出渐进方法联合置信区域
