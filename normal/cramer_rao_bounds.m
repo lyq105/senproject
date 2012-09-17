@@ -9,7 +9,9 @@ function [varm,vars,covms] = cramer_rao_bounds( x,n,r,nnum,theta,datatype)
 %       theta：待估计参数
 %       datatype: 感度数据类型 0:正态分布，1：Logistic分布
 %   输出：
-%       信息矩阵I = [i00,i01;i01,i11]
+%         Estimated Lower Bound of Variance of Mu，     varm
+%         Estimated Lower Bound of Variance of Sigma    vars
+%         Estimated CoVariance of Mu and Sigma          covms
 %
 
 [i00,i01,i11] = fisher_information_matrix(x,n,r,nnum,theta,datatype);
