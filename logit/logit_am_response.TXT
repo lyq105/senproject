@@ -1,0 +1,55 @@
+Neyer D-Optimal, SenTest Version 1.00+, Serial Number 0000.
+Data collected on 22:26:50 Thursday, September 13, 2012.
+MuMin =  10, MuMax =  20, SigmaGuess =  6, Number of Responses Per Trial =  1, Number of Trials Per Stage =  1
+Linear Logit Response Assumed. Units = V
+SigmaGuess =  4.8
+SigmaGuess =  3.84
+SigmaGuess =  3.072
+     Stimulus   No Response   Response
+
+      3.00000,        1,        0
+      6.07538,        1,        0
+      7.41994,        0,        1   <- Lowest Response
+      9.00000,        1,        0   <- Highest No Response
+      10.9945,        0,        1
+      12.0000,        0,        1
+      15.0000,        0,        1
+      17.8370,        0,        1
+
+Number of stimulus values = 8,   Number of items tested = 8
+Number of Failures = 3,   Number of Successes = 5
+
+            Mu =     8.23711 V            Sigma =     2.40846 V
+0.001000 Level =   -0.935392 V   0.999000 Level =     8.23578 V
+
+Estimated Lower Bound of Variance of Mu =     2.29499 V^2
+Estimated Lower Bound of Variance of Sigma =     3.13645 V^2
+Estimated CoVariance of Mu and Sigma =   -0.191868 V^2
+
+The log of the likelihood function =    -2.44909
+The maximum likelihood ratio bounded joint confidence =    0.941774
+The maximum likelihood ratio bounded individual confidence =    0.982907
+
+0.7500 One Sided, 0.5000 Two Sided, 0.2033 Joint Asymptotic Confidence Interval
+            Mu = (    7.21579,    9.25845)          Sigma = (    1.21452,    3.60245)
+0.001000 Level = (   -5.66654,    3.79587) 0.999000 Level = (    7.21441,    9.25717)
+
+0.9000 One Sided, 0.8000 Two Sided, 0.5602 Joint Asymptotic Confidence Interval
+            Mu = (    6.29543,    10.1788)          Sigma = (   0.138606,    4.67841)
+0.001000 Level = (   -9.92997,    8.05940) 0.999000 Level = (    6.29402,    10.1776)
+
+0.9500 One Sided, 0.9000 Two Sided, 0.7416 Joint Asymptotic Confidence Interval
+            Mu = (    5.74479,    10.7295)          Sigma = (  -0.505098,    5.32214)
+0.001000 Level = (   -12.4807,    10.6102) 0.999000 Level = (    5.74336,    10.7283)
+
+0.9750 One Sided, 0.9500 Two Sided, 0.8536 Joint Asymptotic Confidence Interval
+            Mu = (    5.26732,    11.2069)          Sigma = (   -1.06327,    5.88033)
+0.001000 Level = (   -14.6925,    12.8221) 0.999000 Level = (    5.26587,    11.2058)
+
+0.9900 One Sided, 0.9800 Two Sided, 0.9333 Joint Asymptotic Confidence Interval
+            Mu = (    4.71228,    11.7620)          Sigma = (   -1.71212,    6.52921)
+0.001000 Level = (   -17.2637,    15.3933) 0.999000 Level = (    4.71080,    11.7608)
+
+0.9950 One Sided, 0.9900 Two Sided, 0.9638 Joint Asymptotic Confidence Interval
+            Mu = (    4.33438,    12.1399)          Sigma = (   -2.15388,    6.97098)
+0.001000 Level = (   -19.0142,    17.1439) 0.999000 Level = (    4.33289,    12.1387)

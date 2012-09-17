@@ -6,8 +6,8 @@ function [varm,vars,covms] = cramer_rao_bounds( x,n,r,nnum,theta,datatype)
 %       n :  相同刺激水平试验次数
 %       r :  相同刺激水平响应次数
 %       nnum : 刺激水平个数 
-%       theta：待估计参数
-%       datatype: 感度数据类型 0:正态分布，1：Logistic分布
+%       theta：参数
+%      
 %   输出：
 %         Estimated Lower Bound of Variance of Mu，     varm
 %         Estimated Lower Bound of Variance of Sigma    vars
@@ -18,8 +18,7 @@ function [varm,vars,covms] = cramer_rao_bounds( x,n,r,nnum,theta,datatype)
 
 deti  =  i00*i11- i01*i01;
 varm  =  i11/deti;	
-vars  =  i00/deti*pi*pi/3;	
-covms = -i01/deti*pi/sqrt(3);
+vars  =  i00/deti;	
+covms = -i01/deti;
 
 end
-

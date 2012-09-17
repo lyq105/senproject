@@ -7,7 +7,7 @@ function [m_inter,s_inter,lp_inter] = asymptotic_confidence_intervals(x,n,r,nnum
 %             r :  相同刺激水平响应次数
 %          nnum :  刺激水平个数 
 %         theta :  待估计参数
-%      datatype :  感度数据类型 0:正态分布，1：Logistic分布
+%      datatype :  'norm'代表正态分布，'logistic'代表logit分布
 %      cf_level :  置信度
 %             p :  发火点概率
 %   输出：
@@ -19,11 +19,10 @@ function [m_inter,s_inter,lp_inter] = asymptotic_confidence_intervals(x,n,r,nnum
    
 [i00,i01,i11] = fisher_information_matrix(x,n,r,nnum,theta_e,datatype);
 
-v = 0.5*atan(2*i01/(i00-i11));
-
+[H,z] = eig([i00,i01;i01,i11]);
 d_cf = chi2inv(cf_level,1);
-a = sqrt(2 * d_cf / (i00 + i11 + sqrt((i00 - i11)^2 + (2 * i01)^2)));
-b = sqrt(2 * d_cf / (i00 + i11 - sqrt((i00 - i11)^2 + (2 * i01)^2)));
+a = sqrt(d_cf/z(1,1))
+b = sqrt(d_cf/z(2,2))
 
 alpha = 0:1e-5:2*pi;
 
@@ -32,8 +31,8 @@ s_inter =[];
 lp_inter=[];
 
 for i=1:length(d_cf)
-	m = theta_e(1) + a(i)*cos(alpha)*cos(v) - b(i)*sin(alpha)*sin(v);
-	s = theta_e(2) + a(i)*cos(alpha)*sin(v) + b(i)*sin(alpha)*cos(v);
+	m = theta_e(1) + a(i)*cos(alpha)*H(1,1) + b(i)*sin(alpha)*H(2,1);
+	s = theta_e(2) + a(i)*cos(alpha)*H(1,2) + b(i)*sin(alpha)*H(2,2);
 		
 	m_inter = [m_inter;[min(m),max(m)]];
 	s_inter = [s_inter;[min(s),max(s)]];
