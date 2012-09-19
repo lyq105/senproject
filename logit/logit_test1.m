@@ -47,3 +47,6 @@ lp_inter = lp_inter
 %% 画出渐进方法的联合置信域
 plot_asymptotic_cr(theta_e,i00,i01,i11,m_inter,s_inter,datatype,cf_level)
 
+%  方差函数方法 -- Langlie方法 置信区间求解方法验证。
+[m_inter,s_inter,lp_inter,varm,vars,sigma] = variance_function_intervals(x,n,r,nnum,datatype,cf_level,p)
+aaa = [m_inter,s_inter,lp_inter]

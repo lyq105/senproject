@@ -1,0 +1,50 @@
+Neyer D-Optimal, SenTest Version 1.00+, Serial Number 0000.
+Data collected on 16:50:15 Tuesday, September 18, 2012.
+MuMin =  10, MuMax =  20, SigmaGuess =  6, Number of Responses Per Trial =  1, Number of Trials Per Stage =  1
+Linear Logit Response Assumed. Units = v
+SigmaGuess =  4.8
+SigmaGuess =  3.84
+SigmaGuess =  3.072
+     Stimulus   No Response   Response
+
+      3.00000,        1,        0
+      6.07538,        1,        0
+      7.41994,        0,        1   <- Lowest Response
+      9.00000,        1,        0   <- Highest No Response
+      10.9945,        0,        1
+      12.0000,        0,        1
+      15.0000,        0,        1
+      17.8370,        0,        1
+
+Number of stimulus values = 8,   Number of items tested = 8
+Number of Failures = 3,   Number of Successes = 5
+
+Mu =     8.23711 v   Sigma =     2.40846 v   \"unbiased\" Sigma =     4.01411 v
+0.001000 Level =    -7.05039 v   0.999000 Level =     8.23490 v
+
+Estimated Lower Bound of Variance of Mu =     5.03533 v^2
+Estimated Lower Bound of Variance of Sigma =     6.44522 v^2
+
+0.7500 One Sided, 0.5000 Two Sided, 0.2033 Joint Langlie Confidence Interval
+            Mu = (    6.72428,    9.74995)          Sigma = (    2.30258,    5.72570)
+0.001000 Level = (   -13.7422,  -0.358857) 0.999000 Level = (    6.72207,    9.74774)
+
+0.9000 One Sided, 0.8000 Two Sided, 0.5602 Joint Langlie Confidence Interval
+            Mu = (    5.36100,    11.1132)          Sigma = (   0.760250,    7.26809)
+0.001000 Level = (   -19.7724,    5.67116) 0.999000 Level = (    5.35879,    11.1110)
+
+0.9500 One Sided, 0.9000 Two Sided, 0.7416 Joint Langlie Confidence Interval
+            Mu = (    4.54537,    11.9289)          Sigma = (  -0.162504,    8.19088)
+0.001000 Level = (   -23.3802,    9.27884) 0.999000 Level = (    4.54316,    11.9267)
+
+0.9750 One Sided, 0.9500 Two Sided, 0.8536 Joint Langlie Confidence Interval
+            Mu = (    3.83812,    12.6361)          Sigma = (  -0.962644,    8.99105)
+0.001000 Level = (   -26.5086,    12.4071) 0.999000 Level = (    3.83592,    12.6339)
+
+0.9900 One Sided, 0.9800 Two Sided, 0.9333 Joint Langlie Confidence Interval
+            Mu = (    3.01596,    13.4583)          Sigma = (   -1.89278,    9.92122)
+0.001000 Level = (   -30.1452,    16.0437) 0.999000 Level = (    3.01376,    13.4561)
+
+0.9950 One Sided, 0.9900 Two Sided, 0.9638 Joint Langlie Confidence Interval
+            Mu = (    2.45621,    14.0180)          Sigma = (   -2.52605,    10.5545)
+0.001000 Level = (   -32.6212,    18.5195) 0.999000 Level = (    2.45401,    14.0158)
